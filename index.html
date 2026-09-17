@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shxne Studios – Wartung</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0f;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Hintergrund-Glow */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(140, 82, 255, 0.25) 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  body::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.18) 0%, transparent 70%);
+    bottom: -150px;
+    right: -150px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(40px, 40px); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+    max-width: 700px;
+    animation: fadeIn 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .logo {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #a855f7, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo span {
+    font-weight: 300;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c084fc;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #9ca3af;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  /* Ladebalken */
+  .loader {
+    width: 100%;
+    max-width: 400px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+  }
+
+  .loader-bar {
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(90deg, #a855f7, #22d3ee);
+    border-radius: 50px;
+    animation: loading 2s ease-in-out infinite;
+  }
+
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+  }
+
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-discord {
+    background: #5865F2;
+    color: #fff;
+  }
+
+  .btn-discord:hover {
+    background: #4752c4;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(168, 85, 247, 0.6);
+    transform: translateY(-3px);
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #4b5563;
+    z-index: 2;
+  }
+
+  @media (max-width: 600px) {
+    .logo { font-size: 2rem; }
+    h1 { font-size: 1.7rem; }
+    p { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">Shxne<span> Studios</span></div>
+    <div class="badge">● Wartungsmodus</div>
+
+    <h1>Wir sind bald zurück</h1>
+    <p>
+      Unsere Website wird aktuell gewartet und mit neuen Features ausgestattet.
+      Wir bitten um ein wenig Geduld – es lohnt sich! 🚀
+    </p>
+
+    <div class="loader">
+      <div class="loader-bar"></div>
+    </div>
+
+    <div class="buttons">
+      <a href="https://discord.gg/KeQZEvZCM3" target="_blank" class="btn btn-discord">
+        💬 Discord beitreten
+      </a>
+      <a href="mailto:info@shxne-studios.de" class="btn btn-outline">
+        ✉️ Kontakt
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 <a href="https://github.com/Shxne-Studios">Shxne Studios</a> – Alle Rechte vorbehalten
+  </div>
+
+</body>
+</html>
